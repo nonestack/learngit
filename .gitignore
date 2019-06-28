@@ -1,0 +1,5 @@
+#ignore all file apart from source file
+
+*.o
+*.out
+*.log

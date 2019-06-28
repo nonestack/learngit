@@ -1,0 +1,305 @@
+    1  ifconfig
+    2  shell
+    3  sudo apt-get install shell
+    4  sudo apt-get update
+    5  sudo apt-get install shell
+    6  shell
+    7  ssh
+    8  sudo apt-get install ssh
+    9  ls
+   10  mkdir homework
+   11  sudo apt-get install vim
+   12  sudo apt-get update
+   13  sudo dpkg -i mysql-apt-config_0.8.10-1_all.deb
+   14  sudo dpkg -i mysql-apt-config_0.8.12-1_all.deb
+   15  sudo apt-get update
+   16  sudo apt-get install mysql-server
+   17  passwd root
+   18  sudo passwd
+   19  sudo apt-get install mysql-server
+   20  sudo apt-get install libmysqlclient-dev
+   21  sudo apt-get update
+   22  mysql -u root -p
+   23  mysql -u root -p
+   24  man db_open
+   25  db_close
+   26  man db_close
+   27  man mysql_close
+   28  mysql -u root -p
+   29  sudo aplt
+   30  sudo apt-get update
+   31  mysql -u root -p
+   32  man system
+   33  mkdir day19
+   34  ls
+   35  cd day19
+   36  ls
+   37  vim Hello.py
+   38  vim main.c
+   39  gcc main.c 
+   40  ./a.out Hello.py 
+   41  vim main.c 
+   42  gcc main.c 
+   43  ./a.out Hello.py 
+   44  man system
+   45  cd day19
+   46  ls
+   47  vim file 
+   48  vim main.c 
+   49  ifconfig
+   50  ps -elf | grep thread_pool_servers
+   51  ps -elf | grep thread_pool_server
+   52  ps -elf | grep a.out
+   53  ps -elf | grep thread_pool_server
+   54  ps -eLlf | grep thread_pool_server
+   55  do-release-upgrade
+   56  cd ./day19
+   57  ls
+   58  cd ~/day18
+   59  ls
+   60  cat file 
+   61  cd soft_source/
+   62  ls
+   63  tar --help
+   64  tar xvzf libevent-2.1.8-stable.tar.gz 
+   65  ls
+   66  cd libevent-2.1.8-stable/
+   67  ls
+   68  ./configure 
+   69  make
+   70  sudo make install
+   71  cd .libs
+   72  sudo cp lib*.so.* /usr/lib/
+   73  ls
+   74  cd day18/
+   75  ls
+   76  cd day15/
+   77  ls
+   78  cd day15/
+   79  ls
+   80  ./a.out 192.168.3.116 2000 5
+   81  vim main.c 
+   82  vim Fun.c
+   83  vim ~/day18/socket_fun.c
+   84  netstat
+   85  netstat -t
+   86  netstat -an | grep listen
+   87  netstat -an | grep LISTEN
+   88  cd day18
+   89  ls
+   90  pref
+   91  find / -name pref
+   92  sudo find / -name pref
+   93  pref list
+   94  perf list
+   95  sudo apt install linux-tools-common
+   96  perf list
+   97  apt-cache search linux-source
+   98  apt-get install linux-source-4.4.0
+   99  sudo apt-get install linux-source-4.4.0
+  100  ls /usr/src
+  101  ls
+  102  perf list
+  103  sudo apt-get linux-tools-4.4.0-31-generic
+  104  sudo apt-get install linux-tools-4.4.0-31-generic
+  105  sudo apt-get install linux-cloud-tools-4.4.0-31-generic
+  106  sudo apt-get install linux-tools-generic
+  107  sudo apt-get install linux-cloud-tools-generic
+  108  perf list
+  109  ps -eLlf | grep a.out
+  110  vim test.c
+  111  gcc test.c 
+  112  ls
+  113  cd day15/
+  114  ls
+  115  cd day15/
+  116  ls
+  117  cd client/
+  118  ls
+  119  vim test.c 
+  120  ls
+  121  gcc test.c 
+  122  ./a.out 192.168.3.116 2000
+  123  ls
+  124  cd ..
+  125  ls
+  126  gcc *.c
+  127  ./a.out 192.168.3.116 2000
+  128  ./a.out 192.168.3.116 2000 3
+  129  ps -eLlf | grep a.out
+  130  ls
+  131  cd client/
+  132  ls
+  133  cat file 
+  134  rm file 
+  135  ./a.out 192.168.3.116 2000
+  136  ls
+  137  cat file 
+  138  man sk_wai
+  139  man sk_wait
+  140  cd day18
+  141  ls
+  142  cd new/
+  143  ls
+  144  vim tranFile.c 
+  145  ls
+  146  cd day18
+  147  ls
+  148  cd new/
+  149  ls
+  150  ls -a
+  151  rm .tranFile.c.swp 
+  152  cd ../client/
+  153  ls
+  154  ls -a
+  155  rm .client.c.swp 
+  156  cd ../new/
+  157  ls
+  158  vim tranFile.c 
+  159  ls
+  160  rm a.out 
+  161  cp ../client/ .
+  162  cp ../client .
+  163  cp -r ../client .
+  164  ls
+  165  cd ..
+  166  l
+  167  ls
+  168  tar -cvzf day18.tar.gz new/
+  169  ls
+  170  cp day18.tar.gz ~/homework/
+  171  make --hlep
+  172  make -v
+  173  ls
+  174  cd new/
+  175  ls
+  176  vim tranFile.c 
+  177  ls
+  178  do-release-upgrade
+  179  cd Program/file_mangagement_server/
+  180  ls
+  181  cd client/
+  182  ls
+  183  ls src/
+  184  cd src/
+  185  ls
+  186  vim main.c 
+  187  ls
+  188  cd ..
+  189  make
+  190  vim Makefile 
+  191  make
+  192  cd ..
+  193  cd server/
+  194  ls
+  195  vim ./src/main.c 
+  196  ls
+  197  make
+  198  ./main ./conf/server.conf 
+  199  vim main 
+  200  vim ./src/main.c 
+  201  make clean
+  202  make
+  203  ./main ./conf/server.conf 
+  204  vim ./src/main.c 
+  205  make clean 
+  206  make
+  207  ./main ./conf/server.conf 
+  208  make clean
+  209  ps -eLlf | grep main
+  210  cd Program/file_mangagement_server/server/
+  211  ls
+  212  cd ../client/
+  213  ls
+  214  ./main 192.168.3.116 2000
+  215  ls
+  216  cd homework/
+  217  ls
+  218  mkdir package
+  219  ls
+  220  mv day* package/
+  221  ls
+  222  mv 2019325_陶圣坤.zip package/
+  223  ls
+  224  cd  ~/Program/file_mangagement_server/client/
+  225  ls
+  226  ./main 192.168.3.116 2000
+  227  ls
+  228  ./main 192.168.3.116 2000
+  229  vim src/sock_communication.c 
+  230  make
+  231  ./main 192.168.3.116 2000
+  232  cd Program/file_mangagement_server/server/
+  233  ls
+  234  rm a.out 
+  235  make
+  236  ./main ./conf/server.conf 
+  237  vim src/deal_order.c 
+  238  make
+  239  ./main ./conf/server.conf 
+  240  vim src/deal_order.c 
+  241  make
+  242  ./main ./conf/server.conf 
+  243  vim src/deal_order.c 
+  244  make
+  245  ./main ./conf/server.conf 
+  246  vim src/deal_order.c 
+  247  make 
+  248  ./main ./conf/server.conf 
+  249  vim src/deal_order.c 
+  250  make
+  251  ./main ./conf/server.conf 
+  252  vim src/deal_order.c 
+  253  make
+  254  vim src/deal_order.c 
+  255  ./main ./conf/server.conf 
+  256  vim src/deal_order.c 
+  257  cd Program/file_mangagement_server/client/
+  258  ls
+  259  make
+  260  ./main 192.168.3.116 2000
+  261  vim src/sock_communication.c 
+  262  make
+  263  ./main 192.168.3.116 2000
+  264  vim src/sock_communication.c 
+  265  make
+  266  ./main 192.168.3.116 2000
+  267  vim src/sock_communication.c 
+  268  make
+  269  ./main 192.168.3.116 2000
+  270  vim src/sock_communication.c 
+  271  ls
+  272  vim include/deliver_file.h
+  273  cd Program/file_mangagement_server/client/
+  274  ls
+  275  make clean 
+  276  tree .
+  277  mkdir clond
+  278  ls
+  279  tree .
+  280  vim src/deliver_file.c 
+  281  ./main 192.168.3.116 2000
+  282  ls
+  283  make
+  284  ./main 192.168.3.116 2000
+  285  ls
+  286  tree .
+  287  vim src/deliver_file.c 
+  288  vim src/main.c 
+  289  vim src/sock_communication.c 
+  290  ls
+  291  make
+  292  vim src/deliver_file.c 
+  293  make
+  294  vim src/deliver_file.c 
+  295  make
+  296  vim src/deliver_file.c 
+  297  make
+  298  tree .
+  299  cp src/deliver_file.c  ../server/src/
+  300  cp include/deliver_file.h ../server/include/
+  301  vim src/
+  302  vim src/main.c 
+  303  ls
+  304  ls clond/
+  305  history > clond/history

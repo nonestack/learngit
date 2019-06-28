@@ -1,0 +1,8 @@
+SrcEnglish				/home/genius/Program/InputAssistant/data/English/
+SrcChinese				/home/genius/Program/InputAssistant/data/Chinese/
+IndexEnglish			/home/genius/Program/InputAssistant/data/indexEnglish.txt
+IndexChinese			/home/genius/Program/InputAssistant/data/indexChinese.txt
+IndexLinkEnglish		/home/genius/Program/InputAssistant/data/indexLinkEnglish.txt
+IndexLinkChinese		/home/genius/Program/InputAssistant/data/indexLinkChinese.txt
+socket_ip				192.168.3.116
+socket_port				2000
