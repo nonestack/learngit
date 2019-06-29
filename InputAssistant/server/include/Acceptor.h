@@ -10,7 +10,7 @@
 #include "InetAddress.h"
 #include "Socket.h"
 
-namespace wd
+namespace tsk
 {
 
 class Acceptor
@@ -32,6 +32,6 @@ private:
 	Socket _listensock;
 };
 
-}//end of namespace wd
+}//end of namespace tsk
 
 #endif

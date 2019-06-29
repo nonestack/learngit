@@ -11,7 +11,7 @@
 #include <string>
 using std::string;
 
-namespace wd
+namespace tsk
 {
 
 class InetAddress
@@ -30,6 +30,6 @@ private:
 	struct sockaddr_in _addr;
 };
 
-}//end of namespace wd
+}//end of namespace tsk
 
 #endif

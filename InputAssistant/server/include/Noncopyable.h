@@ -8,7 +8,7 @@
 #ifndef __WD_NONCOPYABLE_H__
 #define __WD_NONCOPYABLE_H__
 
-namespace wd
+namespace tsk
 {
 
 class Noncopyable
@@ -21,6 +21,6 @@ protected:
 	Noncopyable & operator=(const Noncopyable &) = delete;
 };
 
-}//end of namespace wd
+}//end of namespace tsk
 
 #endif

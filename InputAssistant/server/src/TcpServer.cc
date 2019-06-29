@@ -4,9 +4,9 @@
  /// @date    2019-05-08 15:07:04
  ///
  
-#include "TcpServer.h"
+#include "../include/TcpServer.h"
 
-namespace wd
+namespace tsk
 {
 TcpServer::TcpServer(const string & ip, unsigned short port)
 : _acceptor(ip, port)
@@ -28,4 +28,4 @@ void TcpServer::setMessageCallback(TcpConnectionCallback && cb)
 void TcpServer::setCloseCallback(TcpConnectionCallback && cb)
 {	_loop.setCloseCallback(std::move(cb));	}
 
-}//end of namespace wd
+}//end of namespace tsk

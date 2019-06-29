@@ -15,7 +15,7 @@
 using std::vector;
 using std::unique_ptr;
 
-namespace wd
+namespace tsk
 {
 
 using Task = std::function<void()>;
@@ -42,7 +42,7 @@ private:
 	bool _isExit;
 };
 
-}//end of namespace wd
+}//end of namespace tsk
 
 
 #endif 

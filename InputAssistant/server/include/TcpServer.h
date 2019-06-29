@@ -10,7 +10,7 @@
 #include "EventLoop.h"
 #include "TcpConnection.h"
 
-namespace wd
+namespace tsk
 {
 
 using TcpConnectionPtr = std::shared_ptr<TcpConnection>;
@@ -31,7 +31,7 @@ private:
 	EventLoop _loop;
 };
 
-}//end of namespace wd
+}//end of namespace tsk
 
 
 #endif

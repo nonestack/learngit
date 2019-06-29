@@ -7,7 +7,7 @@
 #ifndef __WD_SOCKET_H__
 #define __WD_SOCKET_H__
 
-namespace wd
+namespace tsk
 {
 
 class Socket
@@ -27,7 +27,7 @@ private:
 	int _fd;
 };
 
-}//end of namespace wd
+}//end of namespace tsk
 
 
 #endif

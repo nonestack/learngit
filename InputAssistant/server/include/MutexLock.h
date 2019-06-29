@@ -12,12 +12,10 @@
 #include <pthread.h>
 
 
-namespace wd
+namespace tsk
 {
 
-class MutexLock
-: Noncopyable
-{
+class MutexLock : Noncopyable {
 public:
 	MutexLock();
 	~MutexLock();
@@ -32,8 +30,7 @@ private:
 	pthread_mutex_t _mutex;
 };
 
-class MutexLockGuard
-{ 
+class MutexLockGuard { 
 public: 
 	MutexLockGuard(MutexLock & mutex)
 	: _mutex(mutex)
@@ -49,6 +46,6 @@ private:
 	MutexLock & _mutex;
 };
 
-}//end of namespce wd
+}//end of namespce tsk
 
 #endif

@@ -5,7 +5,7 @@
  ///
  
 
-#include "SocketIO.h"
+#include "../include/SocketIO.h"
 
 #include <stdio.h>
 #include <unistd.h>
@@ -14,7 +14,7 @@
 #include <sys/types.h>
 #include <sys/socket.h>
 
-namespace wd
+namespace tsk
 {
 
 SocketIO::SocketIO(int fd)
@@ -108,4 +108,4 @@ int SocketIO::writen(const char * buff, int len)
 	return len - left;
 }
 
-}//end of namespace wd
+}//end of namespace tsk

@@ -13,7 +13,7 @@
 #include <functional>
 using std::queue;
 
-namespace wd
+namespace tsk
 {
 
 using Task = std::function<void()>;
@@ -39,6 +39,6 @@ private:
 	bool _flag;
 };
 
-}//end of namespace wd
+}//end of namespace tsk
 
 #endif

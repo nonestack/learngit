@@ -4,13 +4,13 @@
  /// @date    2019-05-04 11:20:33
  ///
  
-#include "TaskQueue.h"
+#include "../include/TaskQueue.h"
 
 #include <iostream>
 using std::cout;
 using std::endl;
 
-namespace wd
+namespace tsk
 {
 
 TaskQueue::TaskQueue(size_t sz)
@@ -72,4 +72,4 @@ void TaskQueue::wakeup()
 	_notEmpty.notifyAll();
 }
 
-}//end of namespace wd
+}//end of namespace tsk
