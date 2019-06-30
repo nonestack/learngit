@@ -28,10 +28,12 @@ int main(){
 	//++iter;
 	//select source file of english
 
-	//init index file and directory file
+	//预处理
 	preprocessing(conf);
 
-	string confInfo = "socket_ip";
+	cout << "after preprocessing()" << endl;
+
+	string confInfo("socket_ip");
 	string ip = conf.getPath(confInfo);
 	confInfo = "socket_port";
 	string port = conf.getPath(confInfo);
@@ -57,10 +59,11 @@ int main(){
 void preprocessing(Configuration &conf){
 	string confInfo("SrcEnglish");
 	//cout << confInfo << endl;
-
 	string path = conf.getPath(confInfo);
+	//cout << path << endl;
 	DictProducer dir(path);
 	dir.build_dict();
+	//cout << "ok" << endl;
 
 	//write IndexLinkEnglish file
 	confInfo = "IndexLinkEnglish";
