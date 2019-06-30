@@ -1,6 +1,6 @@
 Edit := main
 #CFLAGS := -g -lpthread -I /usr/include/mysql/ -lmysqlclient -lcrypt -lcrypto -lssl
-CFLAGS := -std=c++11 -g
+CFLAGS := -std=c++11 -g -lpthread
 Path_src := ./src/#
 Path_obj := ./bin/#
 Src := $(wildcard $(Path_src)*.cc) 

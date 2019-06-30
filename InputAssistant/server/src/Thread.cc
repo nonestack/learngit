@@ -5,12 +5,12 @@
  ///
  
 
-#include "Thread.h"
+#include "../include/Thread.h"
 #include <iostream>
 using std::cout;
 using std::endl;
 
-namespace wd
+namespace tsk
 {
 
 Thread::Thread(ThreadCallback && cb)
@@ -50,4 +50,4 @@ Thread::~Thread()
 	cout << "~Thread()" << endl;
 }
 
-}//end of namespace wd
+}//end of namespace tsk

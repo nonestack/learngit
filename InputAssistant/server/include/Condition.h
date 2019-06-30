@@ -11,7 +11,7 @@
 #include "Noncopyable.h"
 #include <pthread.h>
 
-namespace wd
+namespace tsk
 {
 
 class MutexLock;//类的前向声明 可以减少头文件的依赖
@@ -32,7 +32,7 @@ private:
 	MutexLock & _mutex;
 };
 
-}//end of namespace wd
+}//end of namespace tsk
 
 
 #endif

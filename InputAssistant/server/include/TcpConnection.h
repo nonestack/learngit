@@ -18,7 +18,7 @@
 using std::string;
 using std::function;
 
-namespace wd
+namespace tsk
 {
 
 
@@ -67,6 +67,6 @@ private:
 
 };
 
-}//end of namespace wd
+}//end of namespace tsk
 
 #endif

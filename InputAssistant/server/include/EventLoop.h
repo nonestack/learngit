@@ -19,7 +19,7 @@ using std::vector;
 using std::map;
 using std::shared_ptr;
 
-namespace wd
+namespace tsk
 {
 class Acceptor;
 class TcpConnection;
@@ -72,6 +72,6 @@ private:
 	TcpConnectionCallback _onClose;
 };
 
-}//end of namespace wd
+}//end of namespace tsk
 
 #endif

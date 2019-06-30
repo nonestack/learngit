@@ -5,7 +5,7 @@
  ///
  
 
-#include "Socket.h"
+#include "../include/Socket.h"
 
 #include <unistd.h>
 #include <stdio.h>
@@ -14,7 +14,7 @@
 #include <sys/socket.h>
 
 
-namespace wd
+namespace tsk
 {
 
 Socket::Socket()
@@ -42,4 +42,4 @@ Socket::~Socket()
 }
 
 
-}//end of namespace wd
+}//end of namespace tsk

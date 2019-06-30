@@ -4,11 +4,11 @@
  /// @date    2019-05-07 15:02:04
  ///
 
-#include "InetAddress.h"
+#include "../include/InetAddress.h"
 
 #include <string.h>
 
-namespace wd
+namespace tsk
 {
 
 InetAddress::InetAddress(unsigned short port)
@@ -42,4 +42,4 @@ unsigned short InetAddress::port() const
 	return ntohs(_addr.sin_port);
 }
 
-}//end of namespace wd
+}//end of namespace tsk

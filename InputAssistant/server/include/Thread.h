@@ -11,7 +11,7 @@
 #include <pthread.h>
 #include <functional>
 
-namespace wd
+namespace tsk
 {
 
 class Thread
@@ -35,6 +35,6 @@ private:
 	bool _isRunning; 
 };
 
-}//end of namespace wd
+}//end of namespace tsk
 
 #endif

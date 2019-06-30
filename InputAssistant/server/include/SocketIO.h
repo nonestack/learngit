@@ -7,7 +7,7 @@
 #ifndef __WD_SOCKETIO_H__
 #define __WD_SOCKETIO_H__
 
-namespace wd
+namespace tsk
 {
 
 
@@ -27,6 +27,6 @@ private:
 	int _fd;
 };
 
-}//end of namespace wd
+}//end of namespace tsk
 
 #endif 

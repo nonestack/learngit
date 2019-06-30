@@ -15,13 +15,13 @@ using std::cout;
 using std::endl;
 using std::string;
 
-wd::Threadpool * gThreadpool = nullptr;
+tsk::Threadpool * gThreadpool = nullptr;
 
 class Task
 {
 public:
 	Task(const string & msg,
-		 const wd::TcpConnectionPtr & conn)
+		 const tsk::TcpConnectionPtr & conn)
 	: _msg(msg)
 	, _conn(conn)
 	{}
@@ -39,21 +39,25 @@ public:
 		//_conn->send(response);//由线程池的线程(计算线程)完成数据的发送,在设计上来说，是不合理的
 							  //数据发送的工作要交还给IO线程(Reactor所在的线程)完成
 							  //将send的函数的执行延迟到IO线程取操作
-		_conn->sendInLoop(response);
+		cout << "------------------------------------------" << endl;
+		_conn->send("hahahaha");
+		//_conn->sendInLoop(response);
+		cout << "send()" << endl;
+		cout << "------------------------------------------" << endl;
 	}
 private:
 	string _msg;
-	wd::TcpConnectionPtr _conn;
+	tsk::TcpConnectionPtr _conn;
 };
  
 //回调函数体现了扩展性
-void onConnection(const wd::TcpConnectionPtr & conn)
+void onConnection(const tsk::TcpConnectionPtr & conn)
 {
 	cout << conn->toString() << " has connected!" << endl;
 	conn->send("welcome to server.");
 }
 
-void onMessage(const wd::TcpConnectionPtr & conn)
+void onMessage(const tsk::TcpConnectionPtr & conn)
 {
 	//cout << "onMessage...." << endl;
 	string msg = conn->receive();
@@ -71,13 +75,13 @@ void onMessage(const wd::TcpConnectionPtr & conn)
 	gThreadpool->addTask(std::bind(&Task::process, task));
 }
 
-void onClose(const wd::TcpConnectionPtr & conn)
+void onClose(const tsk::TcpConnectionPtr & conn)
 {
 	//cout << "onClose...." << endl;
 	cout << conn->toString() << " has closed!" << endl;
 }
 
-using namespace wd;
+using namespace tsk;
 class EchoServer
 {
 public:
@@ -100,12 +104,12 @@ int main(int argc, char *argv[])
 		cout << "number of argument error!" << endl;
 		return -1;
 	}
-	wd::Threadpool threadpool(4, 10); 
+	tsk::Threadpool threadpool(4, 10); 
 	threadpool.start();
 	
 	gThreadpool = &threadpool;
 
-	wd::TcpServer server(argv[1], atoi(argv[2]));
+	tsk::TcpServer server(argv[1], atoi(argv[2]));
 
 	server.setConnectionCallback(onConnection);
 	server.setMessageCallback(onMessage);

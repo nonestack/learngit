@@ -4,12 +4,12 @@
  /// @date    2019-04-15 14:47:10
  ///
  
-#include "MutexLock.h"
+#include "../include/MutexLock.h"
 
 #include <stdio.h>
 #include <errno.h>
 
-namespace wd
+namespace tsk
 {
 
 MutexLock::MutexLock()
@@ -45,4 +45,4 @@ void MutexLock::unlock()
 	_isLocking = false;
 }
 
-}//end of namespace wd
+}//end of namespace tsk

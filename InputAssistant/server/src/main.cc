@@ -1,6 +1,7 @@
 #include "../include/Configuration.h"
 #include "../include/DictIndex.h"
 #include "../include/DictProducer.h"
+#include "../include/TestTcpServer.h"
 
 #include <map>
 #include <string>
@@ -14,6 +15,8 @@ using std::endl;
 
 using namespace tsk;
 
+void preprocessing(Configuration &);
+
 int main(){
 	Configuration conf;
 	//cout << conf.getConfigMap().size() << endl;
@@ -24,8 +27,37 @@ int main(){
 	//cout << iter->second << endl;
 	//++iter;
 	//select source file of english
+
+	//init index file and directory file
+	preprocessing(conf);
+
+	string confInfo = "socket_ip";
+	string ip = conf.getPath(confInfo);
+	confInfo = "socket_port";
+	string port = conf.getPath(confInfo);
+
+	tsk::Threadpool threadpool(4, 10); 
+	threadpool.start();
+
+	
+	gThreadpool = &threadpool;
+
+	tsk::TcpServer server(ip, atoi(port.c_str()));
+
+	server.setConnectionCallback(onConnection);
+	server.setMessageCallback(onMessage);
+	server.setCloseCallback(onClose);
+
+	server.start();
+
+
+	return 0;
+}
+
+void preprocessing(Configuration &conf){
 	string confInfo("SrcEnglish");
-	cout << confInfo << endl;
+	//cout << confInfo << endl;
+
 	string path = conf.getPath(confInfo);
 	DictProducer dir(path);
 	dir.build_dict();
@@ -41,5 +73,4 @@ int main(){
 	string indexfile = conf.getPath(confInfo);
 	idx.bulidIndex(path, indexfile);
 	dir.show_files();
-	return 0;
 }

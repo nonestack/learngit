@@ -4,8 +4,8 @@
  /// @date    2019-05-06 11:32:31
  ///
  
-#include "Threadpool.h"
-#include "Thread.h"
+#include "../include/Threadpool.h"
+#include "../include/Thread.h"
 
 #include <unistd.h>
 
@@ -13,7 +13,7 @@
 using std::cout;
 using std::endl;
 
-namespace wd 
+namespace tsk 
 {
 
 Threadpool::Threadpool(size_t threadNum, size_t queSize)
@@ -81,4 +81,4 @@ void Threadpool::threadFunc()
 }
 
 
-}//end of namespace wd
+}//end of namespace tsk

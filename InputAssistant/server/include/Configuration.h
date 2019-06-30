@@ -11,7 +11,7 @@ namespace tsk{
 
 class Configuration{
 	public:
-		Configuration(const string &filepath = string("/home/genius/Program/InputAssistant/conf/conf.txt"));	//构造函数
+		Configuration(const string &filepath = string("/home/genius/Program/InputAssistant/server/conf/conf.txt"));	//构造函数
 		map<string, string> &getConfigMap();	//获取存放配置文件内容的map
 		string getPath(const string &confInfo);
 	private:

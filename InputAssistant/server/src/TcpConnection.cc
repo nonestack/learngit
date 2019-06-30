@@ -5,9 +5,9 @@
  ///
  
 
-#include "TcpConnection.h"
-#include "InetAddress.h"
-#include "EventLoop.h"
+#include "../include/TcpConnection.h"
+#include "../include/InetAddress.h"
+#include "../include/EventLoop.h"
 
 #include <stdio.h>
 #include <errno.h>
@@ -16,7 +16,7 @@
 
 #include <sstream>
 
-namespace wd
+namespace tsk
 {
 TcpConnection::TcpConnection(int fd, EventLoop * loop)
 : _sock(fd)
@@ -126,4 +126,4 @@ void TcpConnection::handleCloseCallback()
 	}
 }
 
-}//end of namespace wd
+}//end of namespace tsk

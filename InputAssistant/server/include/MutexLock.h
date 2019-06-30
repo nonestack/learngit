@@ -12,7 +12,7 @@
 #include <pthread.h>
 
 
-namespace wd
+namespace tsk
 {
 
 class MutexLock
@@ -49,6 +49,6 @@ private:
 	MutexLock & _mutex;
 };
 
-}//end of namespce wd
+}//end of namespce tsk
 
 #endif

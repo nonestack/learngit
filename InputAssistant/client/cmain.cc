@@ -45,12 +45,14 @@ int main(int argc, char *argv[]){
 }
 
 void test(size_t sockfd){
-	char buf[1024] = {0};
-	while(1){
-		memset(buf, 0, sizeof(buf));
-		scanf("%s", buf);
-		//strcpy(buf, "Hello, I'm client");
-		cout << buf << endl;
-		write(sockfd, buf, strlen(buf));
-	}
+	string buf;
+	buf.reserve(1024);
+	cin >> buf;
+	//strcpy(buf, "Hello, I'm client");
+	cout << buf << endl;
+	write(sockfd, buf.c_str(), buf.size());
+	cout << "ok" << endl;
+	char tmp[1024] = {0};
+	read(sockfd, tmp, sizeof(tmp));
+	cout << tmp << endl;
 }

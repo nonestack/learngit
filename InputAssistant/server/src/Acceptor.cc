@@ -4,11 +4,11 @@
  /// @date    2019-05-07 15:25:43
  ///
 
-#include "Acceptor.h"
+#include "../include/Acceptor.h"
 #include <sys/types.h>
 #include <sys/socket.h>
 
-namespace wd
+namespace tsk
 {
 
 Acceptor::Acceptor(unsigned short port)
@@ -80,4 +80,4 @@ int Acceptor::accept()
 	return peerfd;
 }
 
-}//end of namespace wd
+}//end of namespace tsk

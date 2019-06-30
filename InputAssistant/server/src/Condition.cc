@@ -4,13 +4,13 @@
  /// @date    2019-04-15 15:06:07
  ///
  
-#include "Condition.h"
-#include "MutexLock.h"  //在Condtion的实现文件里面加载MutexLock的头文件
+#include "../include/Condition.h"
+#include "../include/MutexLock.h"  //在Condtion的实现文件里面加载MutexLock的头文件
 
 #include <stdio.h>
 #include <errno.h>
 
-namespace wd
+namespace tsk
 {
 
 Condition::Condition(MutexLock & mutex)
@@ -49,4 +49,4 @@ void Condition::notifyAll()
 	}
 }
 
-}//end of namespace wd
+}//end of namespace tsk
