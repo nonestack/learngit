@@ -6,6 +6,7 @@
  
 #include "Threadpool.h"
 #include "TcpServer.h"
+#include "LevenshteinDistance.h"
 
 #include <unistd.h>
 #include <stdio.h>
@@ -32,18 +33,11 @@ public:
 		//decode
 		//compute
 		//encode
-		cout << "MyTask::process()" << endl;
-		cout << "client information = "
-			 << _msg << endl;
 		string response = _msg;//要返回给客户端的消息
 		//_conn->send(response);//由线程池的线程(计算线程)完成数据的发送,在设计上来说，是不合理的
 							  //数据发送的工作要交还给IO线程(Reactor所在的线程)完成
 							  //将send的函数的执行延迟到IO线程取操作
-		cout << "------------------------------------------" << endl;
-		_conn->send("hahahaha");
-		//_conn->sendInLoop(response);
-		cout << "send()" << endl;
-		cout << "------------------------------------------" << endl;
+		_conn->sendInLoop("hahahaha");
 	}
 private:
 	string _msg;
@@ -81,20 +75,20 @@ void onClose(const tsk::TcpConnectionPtr & conn)
 	cout << conn->toString() << " has closed!" << endl;
 }
 
-using namespace tsk;
-class EchoServer
-{
-public:
-	void onConnection(const TcpConnectionPtr & conn);
-	void onMessage(const TcpConnectionPtr & conn);
-	void onClose(const TcpConnectionPtr & conn);
-
-	void process();//业务逻辑的处理
-
-private:
-	Threadpool _threadpool;
-	TcpServer _server;
-};
+//using namespace tsk;
+//class EchoServer
+//{
+//public:
+//	void onConnection(const TcpConnectionPtr & conn);
+//	void onMessage(const TcpConnectionPtr & conn);
+//	void onClose(const TcpConnectionPtr & conn);
+//
+//	void process();//业务逻辑的处理
+//
+//private:
+//	Threadpool _threadpool;
+//	TcpServer _server;
+//};
 
 #if 0
 

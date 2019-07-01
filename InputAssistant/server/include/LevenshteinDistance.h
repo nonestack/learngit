@@ -19,7 +19,7 @@ int editDistance(char *word1, int len1, char *word2,  int len2){
 		d[i] = (int *)calloc(len2 + 1, sizeof(int));
 	}
 	int i, j;
-	int flag, insert, delete, substitution;
+	int flag, insert, del, substitution;
 	for(i = 0; i < len1 + 1; ++i){
 		d[i][0] = i;
 	}
@@ -30,7 +30,7 @@ int editDistance(char *word1, int len1, char *word2,  int len2){
 	for(i = 1; i < len1 + 1; ++i){
 		for(j = 1; j < len2 + 1; ++j){
 #if 0
-			//one of path in insert, delete and subtitution
+			//one of path in insert, del and subtitution
 			if(word1[i] == word2[j]){
 				d[i][j] = d[i - 1][j - 1];
 			}
@@ -41,9 +41,9 @@ int editDistance(char *word1, int len1, char *word2,  int len2){
 #if 1
 			flag = word1[i] == word2[j] ? 0 : 1;
 			insert = d[i - 1][j] + 1;
-			delete = d[i][j - 1] + 1;
+			del = d[i][j - 1] + 1;
 			substitution = d[i - 1][j - 1] + flag;
-			d[i][j] = minThr(insert, delete, substitution);
+			d[i][j] = minThr(insert, del, substitution);
 #endif
 		}
 	}

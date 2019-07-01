@@ -39,20 +39,19 @@ int main(int argc, char *argv[]){
 
 	test(sockfd);
 
+	memset(tmp, 0, sizeof(tmp));
+	read(sockfd, tmp,sizeof(tmp));
+	cout << "receive = " << tmp << endl;
 
 	close(sockfd);
 	return 0;
 }
 
 void test(size_t sockfd){
-	string buf;
-	buf.reserve(1024);
-	cin >> buf;
-	//strcpy(buf, "Hello, I'm client");
-	cout << buf << endl;
-	write(sockfd, buf.c_str(), buf.size());
-	cout << "ok" << endl;
-	char tmp[1024] = {0};
-	read(sockfd, tmp, sizeof(tmp));
-	cout << tmp << endl;
+	char buf[1024] = {0};
+	strcpy(buf, "Hello, I'm client\n");
+	write(sockfd, buf, strlen(buf));
+	//cout << "ok" << endl;
+	//read(sockfd, buf, sizeof(buf));
+	//cout << buf << endl;
 }

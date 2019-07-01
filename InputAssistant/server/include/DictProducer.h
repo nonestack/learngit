@@ -23,6 +23,7 @@ class DictProducer{
 		void store_dict(const char *filepath);	//将词典写入文件
 		void show_files() const;	//查看文件路径，作为测试用
 		void show_dict() const;		//查看词典，作为测试用
+		void getWord(vector<string> &);
 	private:
 		//string get_files();			//获取文件的绝对路径
 		//void push_dict(const string &word);	//存储某个单词

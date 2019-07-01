@@ -2,6 +2,8 @@
 #include "../include/DictIndex.h"
 #include "../include/DictProducer.h"
 #include "../include/TestTcpServer.h"
+#include "../include/MyDict.h"
+
 
 #include <map>
 #include <string>
@@ -15,10 +17,10 @@ using std::endl;
 
 using namespace tsk;
 
-void preprocessing(Configuration &);
 
 int main(){
-	Configuration conf;
+	//Configuration conf;
+
 	//cout << conf.getConfigMap().size() << endl;
 	//map<string, string> m(conf.getConfigMap());
 	//cout << m.size() << endl;
@@ -29,9 +31,12 @@ int main(){
 	//select source file of english
 
 	//预处理
-	preprocessing(conf);
+	MyDict *mydict = MyDict::getInstance();
 
-	cout << "after preprocessing()" << endl;
+	//mydict->print();
+
+	//cout << "after preprocessing()" << endl;
+#if 1
 
 	string confInfo("socket_ip");
 	string ip = conf.getPath(confInfo);
@@ -46,34 +51,15 @@ int main(){
 
 	tsk::TcpServer server(ip, atoi(port.c_str()));
 
+
 	server.setConnectionCallback(onConnection);
 	server.setMessageCallback(onMessage);
 	server.setCloseCallback(onClose);
 
 	server.start();
 
+#endif
 
 	return 0;
 }
 
-void preprocessing(Configuration &conf){
-	string confInfo("SrcEnglish");
-	//cout << confInfo << endl;
-	string path = conf.getPath(confInfo);
-	//cout << path << endl;
-	DictProducer dir(path);
-	dir.build_dict();
-	//cout << "ok" << endl;
-
-	//write IndexLinkEnglish file
-	confInfo = "IndexLinkEnglish";
-	path = conf.getPath(confInfo);
-	dir.store_dict(path.c_str());
-
-	//build english index file
-	DictIndex idx(dir);
-	confInfo = "IndexEnglish";
-	string indexfile = conf.getPath(confInfo);
-	idx.bulidIndex(path, indexfile);
-	dir.show_files();
-}

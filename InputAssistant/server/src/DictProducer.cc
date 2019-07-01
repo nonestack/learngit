@@ -89,9 +89,17 @@ void DictProducer::store_dict(const char *filepath){
 	ofs.close();
 }
 
+void DictProducer::getWord(vector<string> &LEnglish){
+	auto iter = _dict.begin();
+	while(iter != _dict.end()){
+		LEnglish.push_back(iter->first);
+		++iter;
+	}
+}
+
 void DictProducer::show_files() const{
 	ofstream ofs;
-	ofs.open("/home/genius/Program/InputAssistant/show.txt");
+	ofs.open("/home/genius/Program/InputAssistant/server/data/show.txt");
 	auto iter = _dict.begin();
 	while(iter != _dict.end()){
 		ofs << iter->first << " : " << iter->second << endl;
