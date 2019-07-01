@@ -39,9 +39,9 @@ int main(){
 #if 1
 
 	string confInfo("socket_ip");
-	string ip = conf.getPath(confInfo);
+	string ip = mydict->getPath(confInfo);
 	confInfo = "socket_port";
-	string port = conf.getPath(confInfo);
+	string port = mydict->getPath(confInfo);
 
 	tsk::Threadpool threadpool(4, 10); 
 	threadpool.start();

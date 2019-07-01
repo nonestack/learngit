@@ -16,6 +16,13 @@ class MyDict{
 		static MyDict *getInstance();
 		static void destory();
 		void print();
+		vector<string> &getLinkEnglish(){
+			return _linkEnglish;
+		}
+
+		string getPath(string &conf){
+			_conf.getPath(conf);
+		}
 	private:
 		MyDict();
 		~MyDict() = default;

@@ -13,7 +13,7 @@ int minThr(int a, int b, int c){
 	return min(a, min(b, c));
 }
 
-int editDistance(char *word1, int len1, char *word2,  int len2){
+int editDistance(const char *word1, int len1, const char *word2,  int len2){
 	int **d = (int **)calloc(len1 + 1, sizeof(int *));
 	for(int i = 0; i < len1 + 1; ++i){
 		d[i] = (int *)calloc(len2 + 1, sizeof(int));
@@ -47,14 +47,15 @@ int editDistance(char *word1, int len1, char *word2,  int len2){
 #endif
 		}
 	}
-	printf("Levenshtein distance = %d\n", d[len1][len2]);
+	int num = d[len1][len2];
+	//printf("Levenshtein distance = %d\n", d[len1][len2]);
 	free(d);
-	return 0;
+	return num;
 }
 
 int test0(){
 	char c1[] = "cafe";
-	char c2[] = "coffee";
+	char c2[] = "hello";
 	editDistance(c1, strlen(c1), c2, strlen(c2));
 	return 0;
 }

@@ -34,14 +34,14 @@ int main(int argc, char *argv[]){
 
 	char tmp[1024] = {0};
 	read(sockfd, tmp, sizeof(tmp));
-	cout << "ok" << endl;
+	//cout << "ok" << endl;
 	cout << tmp << endl;
 
 	test(sockfd);
 
-	memset(tmp, 0, sizeof(tmp));
-	read(sockfd, tmp,sizeof(tmp));
-	cout << "receive = " << tmp << endl;
+	//memset(tmp, 0, sizeof(tmp));
+	//read(sockfd, tmp,sizeof(tmp));
+	//cout << "receive = " << tmp << endl;
 
 	close(sockfd);
 	return 0;
@@ -49,9 +49,16 @@ int main(int argc, char *argv[]){
 
 void test(size_t sockfd){
 	char buf[1024] = {0};
-	strcpy(buf, "Hello, I'm client\n");
+	scanf("%s", buf);
+	strcat(buf, "\n");
 	write(sockfd, buf, strlen(buf));
-	//cout << "ok" << endl;
-	//read(sockfd, buf, sizeof(buf));
-	//cout << buf << endl;
+
+
+	int i;
+	for(i = 0; i < 3; ++i){
+		memset(buf, 0, sizeof(buf));
+		read(sockfd, buf, sizeof(buf));
+		cout << buf << endl;
+	}
 }
+
