@@ -19,6 +19,7 @@ using namespace tsk;
 
 
 int main(){
+
 	//Configuration conf;
 
 	//cout << conf.getConfigMap().size() << endl;
@@ -40,8 +41,10 @@ int main(){
 
 	string confInfo("socket_ip");
 	string ip = mydict->getPath(confInfo);
+	cout << "local ip = " << ip << endl;
 	confInfo = "socket_port";
 	string port = mydict->getPath(confInfo);
+	cout << "local port = " << port << endl;
 
 	tsk::Threadpool threadpool(4, 10); 
 	threadpool.start();

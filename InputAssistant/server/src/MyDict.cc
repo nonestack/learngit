@@ -35,6 +35,7 @@ MyDict::MyDict()
 	string indexfile = _conf.getPath(confInfo);
 	idx.bulidIndex(path, indexfile);
 	dir.show_files();
+	cout << "MyDict()" << endl;
 }
 
 MyDict *MyDict::_pInstance = nullptr;

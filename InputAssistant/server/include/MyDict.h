@@ -3,11 +3,14 @@
 
 #include "Configuration.h"
 
+#include <iostream>
 #include <vector>
 #include <map>
 
 using std::vector;
 using std::map;
+using std::cout;
+using std::endl;
 
 namespace tsk{
 
@@ -21,7 +24,8 @@ class MyDict{
 		}
 
 		string getPath(string &conf){
-			_conf.getPath(conf);
+			cout << conf << endl;
+			return _conf.getPath(conf);
 		}
 	private:
 		MyDict();

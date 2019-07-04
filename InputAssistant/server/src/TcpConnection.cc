@@ -13,6 +13,7 @@
 #include <errno.h>
 #include <stdlib.h>
 #include <sys/socket.h>
+#include <string.h>
 
 #include <sstream>
 
@@ -37,9 +38,17 @@ TcpConnection::~TcpConnection()
 
 string TcpConnection::receive()
 {
+	char tmp[65536] = {0};
 	char buff[65536] = {0};
-	_socketIo.readline(buff, sizeof(buff));
+	_socketIo.readline(tmp, sizeof(tmp));
 	//printf("TcpConnection::receive()\n");
+
+	int i;
+	for(i = 0; i < strlen(tmp) - 1; ++i){
+		buff[i] = tmp[i];
+	}
+	strcat(buff, "\0");
+
 	return string(buff);
 }
 	
